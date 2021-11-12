@@ -1,4 +1,9 @@
 .hlavicka {
-	background-color: #9c27b0;
+	background-color: $hlavni-barva;
 	padding: 20px;
+}
+
+.hlavicka__obsah {
+	max-width: $sirka-obsahu;
+	margin: 0 auto;
 }

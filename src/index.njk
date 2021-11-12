@@ -1,12 +1,13 @@
 ---
 layout: zakladni
 ---
+<div class="main">
+    <h1>Všechny</h1>
 
-<h1>Zkouška úvodní stránky</h1>
-
-<ul>
-	{% for film in filmy %}
-		<li><a href="/film/{{ film.nazev | slug }}">{{ film.nazev }}</a></li>
-	{% endfor %}
-</ul>
+    <ul class="main__seznam">
+        {% for film in filmy %}
+            <li class="main__polozka"><a href="/film/{{ film.nazev | slug }}">{{ film.nazev }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
 

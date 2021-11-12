@@ -13,3 +13,19 @@ body {
 	margin: 0;
 }
 
+.main {
+	max-width: $sirka-obsahu;
+	margin: 0 auto;
+
+	&__seznam {
+		padding-left: 20px;
+	}
+
+	&__polozka {
+		color: $doplnkova-barva;
+	}
+
+	&__polozka a {
+		text-decoration: none;
+	}
+}
