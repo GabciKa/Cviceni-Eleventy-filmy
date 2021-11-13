@@ -1,1 +1,20 @@
-zkouska
+<footer class="paticka">
+    <div class="paticka__obsah">
+        <div>
+            <h2>Podobné weby</h2>
+                <ul>
+                    {% for odkaz in podobneWeby %}
+                        <li><a href="{{ odkaz.adresa }}">{{ odkaz.nazev }}</a></li>
+                    {% endfor %}
+                </ul>
+        </div>
+        <div>
+            <h2>Obecné</h2>
+                <ul>
+                    <li><a href="/puvod-dat/">Původ dat</a></li>
+                    <li><a href="https://github.com/Czechitas-podklady-WEB/Cviceni-Eleventy-filmy">Zadání úkolu</a></li>
+                    <li><a href="https://www.11ty.dev/">Eleventy</a></li>
+                </ul>
+        </div>
+    </div>
+</footer>
