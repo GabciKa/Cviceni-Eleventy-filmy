@@ -8,3 +8,16 @@ permalink: "/film/{{ film.nazev | slug }}/"
 ---
 
 <h2>{{ film.nazev }}</h2>
+
+<div class="film-podrobnosti">
+  <p>Rok:</p><p>{{ film.rok }}</p>
+  <p>Země:</p><p>{{ film.zeme | join(', ') }}</p>
+  <p>Žánr:</p><p>{{ film.zanr | join(', ') }}</p>
+  <p>Délka:</p><p>{{ film.delka }} minut</p>
+    
+</div>
+
+<div class="film-obsah">
+    <h3>Obsah</h3>
+      <p class="film-obsah__popis">{{ film.obsah.text }}</p>
+</div>
