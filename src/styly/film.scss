@@ -1,0 +1,32 @@
+.film {
+	max-width: $sirka-obsahu;
+	margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-top: 20px;
+
+    &-levy-sloupec {
+        margin-right: 20px;
+    }
+
+    &-pravy-sloupec img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &-podrobnosti {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+    }
+
+    &-podrobnosti p {
+        margin: 5px;  
+    }
+
+    &-data {
+        font-weight: bold;
+    }
+
+
+}
+

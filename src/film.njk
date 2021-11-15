@@ -7,17 +7,26 @@ pagination:
 permalink: "/film/{{ film.nazev | slug }}/"
 ---
 
-<h2>{{ film.nazev }}</h2>
+<div class="film">
+  <div class="film-levy-sloupec">
+    <h2>{{ film.nazev }}</h2>
+      <div class="film-podrobnosti">
+        <p class="film-data">Rok:</p><p>{{ film.rok }}</p>
+        <p class="film-data">Země:</p><p>{{ film.zeme | join(', ') }}</p>
+        <p class="film-data">Žánr:</p><p>{{ film.zanr | join(', ') }}</p>
+        <p class="film-data">Délka:</p><p>{{ film.delka }} minut</p>
+      </div>
 
-<div class="film-podrobnosti">
-  <p>Rok:</p><p>{{ film.rok }}</p>
-  <p>Země:</p><p>{{ film.zeme | join(', ') }}</p>
-  <p>Žánr:</p><p>{{ film.zanr | join(', ') }}</p>
-  <p>Délka:</p><p>{{ film.delka }} minut</p>
-    
-</div>
+    <div class="film-obsah">
+        <h2>Obsah</h2>
+          <p class="film-obsah__popis">{{ film.obsah.text }}</p>
+    </div>
+  </div>
+  <div class="film-pravy-sloupec">
+    <img src="{{ film. plakat.url }}" alt="plakát {{ film.nazev }}"/>
+    <div>
+      <h2>Hodnocení</h2>
+    </div>
 
-<div class="film-obsah">
-    <h3>Obsah</h3>
-      <p class="film-obsah__popis">{{ film.obsah.text }}</p>
+  </div>
 </div>

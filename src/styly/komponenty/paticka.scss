@@ -1,0 +1,19 @@
+.paticka__obsah {
+    max-width: $sirka-obsahu;
+	margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &-podobne ul {
+        padding-left: 0;
+    }
+
+    &-podobne li {
+        list-style-type: none;
+    }
+
+    &-podobne li a {
+        color: $doplnkova-barva;
+        text-decoration: none;
+    }
+}
