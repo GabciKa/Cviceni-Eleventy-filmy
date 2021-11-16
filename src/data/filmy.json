@@ -397,5 +397,25 @@
 			"sirka": 360,
 			"vyska": 504
 		}
+	},
+	{
+		"nazev": "Coherence",
+		"rok": 2013,
+		"zanr": ["Mysteriózní", "Sci-Fi", "Thriller"],
+		"zeme": ["USA", "Velká Británie"],
+		"delka": 89,
+		"obsah": {
+			"text": "V roku 1923 bola niekde vo Fínsku zahliadnutá kométa, ktorej vplyv vyvolal sled nezvyčajných udalostí. Jedna žena zavolala do svojho domu políciu s tým, že v budove je muž, ktorý vôbec nie je jej manželom. Keď sa ju policajný strážnik pokúšal presvedčiť o tom, že osoba v dome je skutočne jej muž, ona odvetila, že svojho manžela v predošlý deň zabila. Súčasnosť. Osem priateľov sa spolu po dlhom čase stretáva pri spoločnej večeri v dome jedného z nich a nad zemou opäť prelieta kométa...",
+			"autor": {
+				"jmeno": "sochoking"
+			}
+		},
+		"hodnoceni": 4,
+		"souvisejici": [],
+		"plakat": {
+			"url": "https://www.themoviedb.org/t/p/original/tGLMG1vhaOX9kCb5MPiog0jCXZs.jpg",
+			"sirka": 360,
+			"vyska": 504
+		}
 	}
 ]

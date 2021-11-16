@@ -26,7 +26,49 @@ permalink: "/film/{{ film.nazev | slug }}/"
     <img src="{{ film. plakat.url }}" alt="plakát {{ film.nazev }}"/>
     <div>
       <h2>Hodnocení</h2>
+
+      {% if film.hodnoceni == 5 %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+      {% elif film.hodnoceni == 4 %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+      {% elif film.hodnoceni == 3 %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">  
+      {% elif film.hodnoceni == 2 %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+      {% else %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+      {% endif %}
+        <div>
+          
+        </div>
     </div>
+
+  {% if film.souvisejici | length > 1 %}
+    <div>
+      <h2>Související filmy</h2>
+    </div>
+  {% endif %}
+
 
   </div>
 </div>
