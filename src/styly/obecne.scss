@@ -11,11 +11,13 @@ html {
 body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
+	line-height: 1.4;
 }
 
 .main {
 	max-width: $sirka-obsahu;
 	margin: 0 auto;
+	padding: $mezera-od-okraju;
 
 	&__seznam {
 		padding-left: 20px;
@@ -28,4 +30,10 @@ body {
 	&__polozka a {
 		text-decoration: none;
 	}
+}
+
+.puvod-dat {
+	max-width: $sirka-obsahu;
+	margin: 0 auto;
+	padding: $mezera-od-okraju;
 }

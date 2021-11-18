@@ -1,9 +1,16 @@
 .hlavicka {
 	background-color: $hlavni-barva;
-	padding: 20px;
+
+	&__obsah {
+		max-width: $sirka-obsahu;
+		padding: $mezera-od-okraju;
+		margin: 0 auto;
+	}
+
+	&__logo {
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
 }
 
-.hlavicka__obsah {
-	max-width: $sirka-obsahu;
-	margin: 0 auto;
-}

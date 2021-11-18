@@ -1,0 +1,31 @@
+{% if film.hodnoceni == 5 %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+      {% elif film.hodnoceni == 4 %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+      {% elif film.hodnoceni == 3 %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">  
+      {% elif film.hodnoceni == 2 %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+      {% else %}
+        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
+      {% endif %}

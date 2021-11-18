@@ -18,73 +18,34 @@ permalink: "/film/{{ film.nazev | slug }}/"
       </div>
 
     <div class="film-obsah">
-        <h2>Obsah</h2>
+        <h3>Obsah</h3>
           <p class="film-obsah__popis">{{ film.obsah.text }}
 
             {% if film.obsah.autor.odkaz %}
-              <a href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>
+              <a href="{{ film.obsah.autor.odkaz }}" class="film-autor">({{ film.obsah.autor.jmeno }})</a>
             {% else %}
-              <span>{{ film.obsah.autor.jmeno }}</span>
+              <span class="film-autor">({{ film.obsah.autor.jmeno }})</span>
             {% endif %}
 
-          </p>
-          
-    </div>
+          </p> 
+      </div>
   </div>
-  <div class="film-pravy-sloupec">
-    <img src="{{ film.plakat.url }}" alt="plakát {{ film.nazev }}"/>
-    <div>
-      <h2>Hodnocení</h2>
 
-      {% if film.hodnoceni == 5 %}
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-      {% elif film.hodnoceni == 4 %}
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-      {% elif film.hodnoceni == 3 %}
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">  
-      {% elif film.hodnoceni == 2 %}
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-      {% else %}
-        <img src="/obrazky/hvezda-vyplnena.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-        <img src="/obrazky/hvezda-prazdna.svg" alt="hodnocení filmu">
-      {% endif %}
-        <div>
+    <div class="film-pravy-sloupec">
+      <img src="{{ film.plakat.url }}" alt="plakát {{ film.nazev }}"/>
+      <h3>Hodnocení</h3>
+        {% include "hodnoceni.njk" %}
+
+        {% set filmy = film.souvisejici %} 
+        {% if filmy | length > 0 %}
           
-        </div>
-    </div>
-
-  {% set filmy = film.souvisejici %} 
-
-  {% if filmy | length > 0 %}
+          <h3>Související filmy</h3>
+            <ul class="main__seznam">
+              {% for film in filmy %}
+                  <li class="main__polozka"><a href="/film/{{ film.nazev | slug }}">{{ film.nazev }}</a></li>
+              {% endfor %}
+            </ul>
     
-      <h2>Související filmy</h2>
-      <ul class="main__seznam">
-        {% for film in filmy %}
-            <li class="main__polozka"><a href="/film/{{ film.nazev | slug }}">{{ film.nazev }}</a></li>
-        {% endfor %}
-    </ul>
- 
-   {% endif %} 
-
-
-  </div>
+      {% endif %} 
+    </div>
 </div>

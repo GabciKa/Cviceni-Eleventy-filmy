@@ -1,6 +1,7 @@
 .paticka__obsah {
     max-width: $sirka-obsahu;
 	margin: 0 auto;
+    padding: $mezera-od-okraju;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -13,7 +14,11 @@
     }
 
     &-podobne li a {
-        color: $doplnkova-barva;
+        color: rgb(65, 64, 64);
         text-decoration: none;
+    }
+
+    @media (max-width: $breakpoint-mobil) {
+        grid-template-columns: 1fr;
     }
 }
