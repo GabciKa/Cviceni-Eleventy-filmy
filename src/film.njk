@@ -19,11 +19,20 @@ permalink: "/film/{{ film.nazev | slug }}/"
 
     <div class="film-obsah">
         <h2>Obsah</h2>
-          <p class="film-obsah__popis">{{ film.obsah.text }}</p>
+          <p class="film-obsah__popis">{{ film.obsah.text }}
+
+            {% if film.obsah.autor.odkaz %}
+              <a href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>
+            {% else %}
+              <span>{{ film.obsah.autor.jmeno }}</span>
+            {% endif %}
+
+          </p>
+          
     </div>
   </div>
   <div class="film-pravy-sloupec">
-    <img src="{{ film. plakat.url }}" alt="plakát {{ film.nazev }}"/>
+    <img src="{{ film.plakat.url }}" alt="plakát {{ film.nazev }}"/>
     <div>
       <h2>Hodnocení</h2>
 
@@ -63,11 +72,18 @@ permalink: "/film/{{ film.nazev | slug }}/"
         </div>
     </div>
 
-  {% if film.souvisejici | length > 1 %}
-    <div>
+  {% set filmy = film.souvisejici %} 
+
+  {% if filmy | length > 0 %}
+    
       <h2>Související filmy</h2>
-    </div>
-  {% endif %}
+      <ul class="main__seznam">
+        {% for film in filmy %}
+            <li class="main__polozka"><a href="/film/{{ film.nazev | slug }}">{{ film.nazev }}</a></li>
+        {% endfor %}
+    </ul>
+ 
+   {% endif %} 
 
 
   </div>
